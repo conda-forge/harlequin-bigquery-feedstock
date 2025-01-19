@@ -1,5 +1,5 @@
 {% set name = "harlequin-bigquery" %}
-{% set version = "1.0.2" %}
+{% set version = "1.0.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/harlequin_bigquery-{{ version }}.tar.gz
-  sha256: b883d884ae11e8dee9aac298d86a33906efa588fa0aeedae9ec2b90713b8fbf6
+  sha256: 8dd0f099f894ef1e33978860d767afacfa8b1333c1d8cf3fd473787743751094
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -21,7 +21,7 @@ requirements:
     - pip
   run:
     - python >={{ python_min }},<4.0
-    - harlequin >=1.7.0,<2.0.0
+    - harlequin >=1.7,<3
     - google-cloud-bigquery-core >=3.14.1,<4.0.0
     - google-cloud-bigquery-storage >=2.24.0,<3.0.0
 
